@@ -1,0 +1,17 @@
+name: node js apploication
+on: workflow_dispatch
+jobs:
+   job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: clone the apploication
+        uses: action/checkout@4
+      - name: Install node.js
+        uses: action/setup-node@v4
+        with: 
+            node-version: 18
+            cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: execute test cases
+        run: npm test
