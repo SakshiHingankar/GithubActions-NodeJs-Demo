@@ -2,9 +2,9 @@ name: node js apploication
 on: workflow_dispatch
 jobs:
    job1:
-    stratergy: 
+    strategy: 
       matrix:
-       node-version: [18]
+       node-version: [16,18]
        operating-system: [ubuntu-latest, windows-latest]
     runs-on: 4{{ matrix.operating-system}}
     steps: 
